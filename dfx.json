@@ -1,6 +1,7 @@
 {
   "canisters": {
     "fir_management": {
+      
       "type": "custom",
       "main": "src/index.ts",
       "candid": "src/index.did",

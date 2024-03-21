@@ -1,0 +1,39 @@
+module : {
+    FIRManagementSystem : {
+        /**
+         * Store a new FIR.
+         * Returns the created FIR.
+         */
+        storeFIR : (description : Text, location : Text, reportedBy : Text) -> async Text;
+
+        /**
+         * Get all FIRs.
+         * Returns a list of FIRs.
+         */
+        getAllFIRs : () -> async [Text];
+
+        /**
+         * Get a FIR by ID.
+         * Returns the FIR.
+         * @param firId The ID of the FIR to retrieve.
+         */
+        getFIR : (firId : Text) -> async Text;
+
+        /**
+         * Update a FIR.
+         * Returns the updated FIR.
+         * @param firId The ID of the FIR to update.
+         * @param description The updated description of the FIR.
+         * @param location The updated location of the FIR.
+         * @param reportedBy The updated reporter of the FIR.
+         */
+        updateFIR : (firId : Text, description : Text, location : Text, reportedBy : Text) -> async Text;
+
+        /**
+         * Delete a FIR by ID.
+         * Returns the deleted FIR.
+         * @param firId The ID of the FIR to delete.
+         */
+        deleteFIR : (firId : Text) -> async Text;
+    };
+};
