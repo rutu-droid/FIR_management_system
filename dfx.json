@@ -1,13 +1,12 @@
 {
   "canisters": {
-    "fir_management": {
-      
+    "message_board": {
       "type": "custom",
       "main": "src/index.ts",
       "candid": "src/index.did",
-      "build": "npx azle fir_management",
+      "build": "npx azle message_board",
       "ts": "src/index.ts",
-      "wasm": ".azle/fir_management/fir_management.wasm",
+      "wasm": ".azle/message_board/message_board.wasm",
       "gzip": true
     }
   }
