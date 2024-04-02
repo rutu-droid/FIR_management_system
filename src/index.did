@@ -1,39 +1,4 @@
-module : {
-    FIRManagementSystem : {
-        /**
-         * Store a new FIR.
-         * Returns the created FIR.
-         */
-        storeFIR : (description : Text, location : Text, reportedBy : Text) -> async Text;
-
-        /**
-         * Get all FIRs.
-         * Returns a list of FIRs.
-         */
-        getAllFIRs : () -> async [Text];
-
-        /**
-         * Get a FIR by ID.
-         * Returns the FIR.
-         * @param firId The ID of the FIR to retrieve.
-         */
-        getFIR : (firId : Text) -> async Text;
-
-        /**
-         * Update a FIR.
-         * Returns the updated FIR.
-         * @param firId The ID of the FIR to update.
-         * @param description The updated description of the FIR.
-         * @param location The updated location of the FIR.
-         * @param reportedBy The updated reporter of the FIR.
-         */
-        updateFIR : (firId : Text, description : Text, location : Text, reportedBy : Text) -> async Text;
-
-        /**
-         * Delete a FIR by ID.
-         * Returns the deleted FIR.
-         * @param firId The ID of the FIR to delete.
-         */
-        deleteFIR : (firId : Text) -> async Text;
-    };
-};
+service: () -> {
+    http_request: (record {url:text; method:text; body:vec nat8; headers:vec record {text; text}; certificate_version:opt nat16}) -> (record {body:vec nat8; headers:vec record {text; text}; upgrade:opt bool; streaming_strategy:opt variant {Callback:record {token:vec nat8; callback:func (vec nat8) -> (opt record {token:opt vec nat8; body:vec nat8}) query}}; status_code:nat16}) query;
+    http_request_update: (record {url:text; method:text; body:vec nat8; headers:vec record {text; text}}) -> (record {body:vec nat8; headers:vec record {text; text}; upgrade:opt bool; streaming_strategy:opt variant {Callback:record {token:vec nat8; callback:func (vec nat8) -> (opt record {token:opt vec nat8; body:vec nat8}) query}}; status_code:nat16});
+}
